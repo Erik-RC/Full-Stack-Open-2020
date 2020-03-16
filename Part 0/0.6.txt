@@ -1,0 +1,26 @@
+title Exercise 0.6
+
+note over browser:
+user enters text in text field
+and clicks submit button
+end note
+
+note over browser:
+POST request sends new note
+data in JSON format to the server
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+note over server:
+server responds with
+status code: 201 created
+end note 
+
+server->browser: 201
+
+note over server:
+server does not ask for a
+redirect and no further HTTP GET
+requests are performed
+end note

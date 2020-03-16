@@ -1,0 +1,32 @@
+title Exercise 0.4
+
+note over browser:
+User enters text into the text
+field and clicks submit button
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+
+note over server:
+server asks browser to do
+a new HTTP GET request
+end note
+
+server-->browser: HTTP 302: URL redirect
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.js
+server-->browser: main.js
+
+note over browser:
+browser executes js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server-->browser: [{ content: "new note from user", date: "2020-03-13" }, ...]
+
+note over browser:
+browser executes the event handler
+to display new note
+end note
